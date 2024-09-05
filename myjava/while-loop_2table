@@ -1,0 +1,11 @@
+package myjava;
+
+import java.util.*; 
+
+class while-loop_2table{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        sout
+
+    }
+}
