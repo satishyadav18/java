@@ -1,8 +1,7 @@
-package myjava;
 
 import java.util.Scanner;
 
-public class Web {
+public class Web_type{
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 

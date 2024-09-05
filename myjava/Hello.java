@@ -1,7 +1,6 @@
-package myjava;
 
 class Hello{
-    public static void main(Str[] args){
+    public static void main(String[] args){
         System.out.println("Hello World");
     }
 }

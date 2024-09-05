@@ -1,4 +1,3 @@
-package myjava;
 
 public class StringPrac {
     public static void main(String[] args) {
