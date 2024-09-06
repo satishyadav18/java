@@ -1,5 +1,3 @@
-package college;
-
 
 class fibbo{
     int fib(int n){
@@ -8,6 +6,8 @@ class fibbo{
     }
 }
 
+
+//commandline input
 public class Fibo {
     public static void main(String[] args) {
         int n = Integer.parseInt(args[0]);

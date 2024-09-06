@@ -1,4 +1,3 @@
-package myjava;
 
 class IncreDecre{
     public static void main(String[] args) {

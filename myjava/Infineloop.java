@@ -1,4 +1,3 @@
-package myjava;
 
 public class Infineloop {
     public static void main(String[] args) {

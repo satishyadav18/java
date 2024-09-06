@@ -1,4 +1,3 @@
-package myjava;
 
 class Cast {
    public static void main(Str[] args){

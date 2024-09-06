@@ -1,4 +1,3 @@
-package myjava;
 
 public class IntegerRange {
     public static void main(String[] args) {

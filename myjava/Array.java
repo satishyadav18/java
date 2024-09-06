@@ -1,4 +1,3 @@
-package myjava;
 
 public class Array {
     public static void main(Str[] args){

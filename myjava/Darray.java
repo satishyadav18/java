@@ -1,4 +1,3 @@
-package myjava;
 
 class Darray{
     public static void main(Str[] args){

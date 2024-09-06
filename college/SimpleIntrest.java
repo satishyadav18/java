@@ -1,4 +1,3 @@
-package college;
 
 public class SimpleIntrest {
     public static void main(String[] args) {

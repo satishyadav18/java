@@ -1,4 +1,3 @@
-package myjava;
 
 public class DataCon {
     public static void main(String[] args) {

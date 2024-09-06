@@ -1,4 +1,4 @@
-package myjava;
+
 
 class Computer{
     public void playMusic(){

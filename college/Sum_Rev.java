@@ -1,4 +1,4 @@
-package college;
+//commandline input
 
 public class Sum_Rev {
     public static void main(String[] args) {

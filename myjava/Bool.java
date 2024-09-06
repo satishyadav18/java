@@ -1,4 +1,3 @@
-package myjava;
 
 public class Bool {
     public static void main(Str[] args){

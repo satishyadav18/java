@@ -1,4 +1,3 @@
-package myjava;
 
 import java.util.*;
 public class Add {

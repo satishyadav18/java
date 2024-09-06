@@ -1,4 +1,3 @@
-package college;
 
 import java.util.*;
 public class ArrSumAvg {

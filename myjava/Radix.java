@@ -1,5 +1,3 @@
-package myjava;
-
 import java.util.Scanner;
 
 public class Radix {

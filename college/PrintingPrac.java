@@ -1,4 +1,3 @@
-package college;
 
 public class PrintingPrac {
     public static void main(String[] args) {

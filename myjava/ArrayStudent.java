@@ -1,4 +1,3 @@
-package myjava;
 
 class Student{
     int roll;
