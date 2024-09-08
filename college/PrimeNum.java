@@ -36,6 +36,23 @@
  
 import java.util.*;
 
+class prime{
+    static boolean isPrime(int num) {
+        if(num <= 1){
+        return false;
+        }
+        else{
+        for(int i = 2; i <= Math.sqrt(num); i++){
+            if(num % i == 0){
+                return false;
+            } 
+        }
+        return true;
+        }
+    }
+}
+
+
 public class PrimeNum {
     public static void main(String[] args) {
       Scanner in = new Scanner(System.in);
@@ -59,21 +76,7 @@ public class PrimeNum {
         in.close();
     } 
 }
- class prime{
-    static boolean isPrime(int num) {
-        if(num <= 1){
-        return false;
-        }
-        else{
-        for(int i = 2; i <= Math.sqrt(num); i++){
-            if(num % i == 0){
-                return false;
-            } 
-        }
-        return true;
-        }
-    }
-}
+
 
 // import java.io.Console;
 
