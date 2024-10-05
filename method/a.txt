@@ -1,0 +1,19 @@
+when the object are passed as parameter, object itself is not 
+passed its reference is passed And if a method is modifying the 
+object the actual object will be modified which is there in heap,
+that object will be modified 
+
+
+
+[//Practice.java]
+
+
+
+for understanding => primitive are paased by value and objects are passed by reference 
+but in java there is nothing like adress and pointer its simply parameter passing and nothing more 
+we cannot name the method such as pass by val or ref.
+
+
+--->>
+java doesn't have different methods just it is parameter passing ...........only parmeters are 
+passed so the contents are passed
