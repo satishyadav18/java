@@ -26,6 +26,6 @@ public class Practice{
 
         System.out.println(max(10, 5));
 
-        System.out.println(max(5.25f, 7.8f));
+        System.out.println(max(5.35f, 7.8f));
     }
 }
