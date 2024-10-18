@@ -31,11 +31,11 @@ class Area{
         return s * s;
     }
 
-    float Cir(float r) {
+    double Cir(double r) {
         if (r <= 0) {
             throw new IllegalArgumentException("Side length must be positive.");
         }
-        return (3.14f * r * r);
+        return Math.PI * r * r;
     }
 
 }
@@ -52,7 +52,7 @@ public class Areas{
         int S = a.Sqr(8);
         System.out.println("Area of Square is: "+S+" Sq. unit");
 
-        float C = a.Cir(7);
-        System.out.println("Area of Square is: "+C+" Sq. unit");
+        double C = a.Cir(7);
+        System.out.println("Area of Circle is: "+C+" Sq. unit");
     }
 }
