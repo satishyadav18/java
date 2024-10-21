@@ -21,7 +21,7 @@ public class VArgs{
     }
 
 
-    public static void main(String[] args){
+    public static void main(String ...args){
         show();
         show(10,20,30,40);
         show(new int[]{1,2,3,4,5,6,7,8});  //no refernece for this array and new means it is created in heap and
