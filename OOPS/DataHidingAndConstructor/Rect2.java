@@ -25,11 +25,21 @@ class RectangleTest{
     }
     
     public void setLength(double l){
-        length = l;
+        if(l >= 0){
+            length = l;
+        }
+        else{
+            length = 0;
+        }
     }
 
     public void setBreadth(double b){
-        breadth = b;
+        if(b >= 0){
+            breadth = b;
+        }
+        else{
+            breadth = 0;
+        }
     }
 
     public double area(){
