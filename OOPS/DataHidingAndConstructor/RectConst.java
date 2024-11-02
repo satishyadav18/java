@@ -58,7 +58,7 @@ class RectangleTest{
     }
 }
 
-public class Rect2{
+public class RectConst{
     public static void main(String[] args){
         RectangleTest r = new RectangleTest(-7, -5);
         System.out.println("Area is: "+r.area());
