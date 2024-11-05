@@ -28,17 +28,17 @@ class Studenttest{
 
 class Student{
     public static void main(String[] args){
-        Studenttest s = new Studenttest();
-        s.roll = 118;
-        s.name = "Satish";
-        s.dept = "CSE";
-        s.m1 = 84;
-        s.m2 = 71;
-        s.m3 = 62;
+        Studenttest S = new Studenttest();
+        S.roll = 118;
+        S.name = "Satish";
+        S.dept = "CSE";
+        S.m1 = 84;
+        S.m2 = 71;
+        S.m3 = 62;
 
-        System.out.println(s.details());
-        System.out.println("Total marks obtained: "+s.total());
-        System.out.println("Average marks: "+s.average());
-        System.out.println("Grade obtained: "+s.grade());
+        System.out.println(S.details());
+        System.out.println("Total marks obtained: "+S.total());
+        System.out.println("Average marks: "+S.average());
+        System.out.println("Grade obtained: "+S.grade());
     }
 }
