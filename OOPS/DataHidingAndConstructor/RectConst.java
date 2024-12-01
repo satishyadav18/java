@@ -2,6 +2,8 @@ class RectangleTest{
     private double length; 
     private double breadth;
 
+
+    //constructors
     public RectangleTest(){
         length = 1;
         breadth = 1;
@@ -16,6 +18,7 @@ class RectangleTest{
         length = breadth = s;
     }
 
+    //methods
     public double getLength(){
         return length;
      }
@@ -60,7 +63,7 @@ class RectangleTest{
 
 public class RectConst{
     public static void main(String[] args){
-        RectangleTest r = new RectangleTest(-7, -5);
+        RectangleTest r = new RectangleTest(7, -5);
         System.out.println("Area is: "+r.area());
         System.out.println("Perimeteris: "+r.perimeter());
         System.out.println("Is Square: "+r.isSquare());
