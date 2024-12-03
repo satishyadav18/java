@@ -63,7 +63,7 @@ class RectangleTest{
 
 public class RectConst{
     public static void main(String[] args){
-        RectangleTest r = new RectangleTest(7, -5);
+        RectangleTest r = new RectangleTest(-7, -5);
         System.out.println("Area is: "+r.area());
         System.out.println("Perimeteris: "+r.perimeter());
         System.out.println("Is Square: "+r.isSquare());
