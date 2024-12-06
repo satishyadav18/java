@@ -42,7 +42,7 @@ class Subject{
     }
 
     public String toString(){
-        return "\nSubject ID: "+subID+"\nName: "+name+"\nMarks Obtained: "+marksObtain;
+        return "\nSubject ID:"+subID+"\nName: "+name+"\nMarks Obtained: "+marksObtain;
     }
 }
 
