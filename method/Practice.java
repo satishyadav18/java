@@ -30,4 +30,5 @@ public class Practice{
         inc(a);
         System.out.println(a);
 
-    }}
+    }
+}
