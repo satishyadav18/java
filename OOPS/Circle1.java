@@ -1,6 +1,6 @@
 import java.util.*;
 
-class Circle1{
+class Circle{
     double radius;
 
     public double area(){
@@ -10,10 +10,12 @@ class Circle1{
     public double Circumference(){
         return 2 * Math.PI * radius;
     }
+}
 
+public class Circle1{
     public static void main(String[] args){
-        Circle1 c = new Circle1();
-        Circle1 d = new Circle1();
+        Circle c = new Circle();
+        Circle d = new Circle();
        
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter the radius: ");
@@ -36,3 +38,4 @@ class Circle1{
         System.out.println("Circumference2 is: "+P);
     }
 }
+    
