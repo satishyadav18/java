@@ -38,4 +38,3 @@ public class Circle1{
         System.out.println("Circumference2 is: "+P);
     }
 }
-    
