@@ -13,11 +13,19 @@ class Rect{
     }
     
     public void setLength(float l){
-        length = l;
+        if(l > 0){
+            length = l;
+        }else{
+            length = 0;
+        }
     }
 
     public void setBreadth(float b){
-        breadth = b;
+        if(b > 0){
+            breadth = b;
+        }else{
+            breadth = 0;
+        }
     }
 
     public float area(){
