@@ -4,8 +4,8 @@ class RectangleTest{
 
 
     //constructors
-    public RectangleTest(){
-        length = 1;
+    public RectangleTest(){   //REPLACEMENT FOR 
+        length = 1;           // DEFAULT CONST...
         breadth = 1;
     }
 
