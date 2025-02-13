@@ -1,0 +1,16 @@
+generalisation -- (achieved using Interfaces)
+---------------------------------------------
+Smartphone -> iphone samsung vivo
+Vehicle -> Car Bike Ship
+Shape -> cicle rect square
+
+
+Abstract classes
+----------------
+
+
+Specialisation -- (achieved by usig inheritance)
+------------------------------------------------
+iphone X ---> iphone XS
+Innova ---> Fortuner
+Circle ---> Cylinder
