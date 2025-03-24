@@ -1,0 +1,22 @@
+super class object
+-------------------
+Super su = new Super()  
+su.display()   -> "Hello" 
+
+sub class object
+----------------
+Sub sb = new Sub()   
+sb.display()    -> "Hello World"
+it priorities its own method and the super class method will be shadowed.
+
+
+
+
+Dyanamic mehtod dispatch : 
+------------------------    A super class refernce holding an object of sub class and overrided method
+                             is called then the method of an oject is called not the method of refernce.
+
+Super su = new Sub()    
+su.display()    ->  "Hello World"
+
+>The method will be called depending on the object(Sub) not upon the refernce.
