@@ -35,8 +35,8 @@ public class OverridingTV{
         stv.changeChannel();
         stv.browse();
 
-        TV tv = new SmartTV();
-        tv.switchOn();
+        TV tv = new SmartTV(); //Dynamic method dispatch
+        tv.switchOn();          // reference of super class and object of sub class
         tv.changeChannel();
         //gittv.browse(); //Error  
     }
