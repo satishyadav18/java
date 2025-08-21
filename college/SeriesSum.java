@@ -11,7 +11,5 @@ public class SeriesSum {
             sum += (1.0/i);
         }
         System.out.printf("Sum of series is: %.2f%n", sum);
-
-        in.close();
     }
 }
