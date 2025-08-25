@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Retro Speed Racer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            touch-action: none; /* Prevents browser gestures on the whole page */
+        }
+        #game-container {
+            width: 100%;
+            max-width: 400px;
+            height: 100%;
+            position: relative;
+            background-color: #000;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+            border: 2px solid #00ffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        canvas {
+            background-color: #222;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        #ui-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
+            text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff;
+            visibility: hidden; /* Hidden by default, shown on game start */
+        }
+        .screen-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #00ffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            z-index: 20;
+            visibility: hidden; /* All overlays hidden by default */
+        }
+        .screen-overlay.visible {
+            visibility: visible; /* Use visibility to show/hide */
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+        }
+        p {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            padding: 0 1rem;
+        }
+        .button {
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            color: #1a1a1a;
+            background: linear-gradient(45deg, #00ffff, #00ff88);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-transform: uppercase;
+            box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff inset;
+            transition: all 0.2s ease;
+        }
+        .button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px #00ffff, 0 0 30px #00ffff inset;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="game-container">
+        <!-- UI Elements -->
+        <div id="ui-container">
+            <div>Score: <span id="score">0</span></div>
+            <div>Speed: <span id="speed">0</span> km/h</div>
+        </div>
+
+        <!-- Game Canvas -->
+        <canvas id="gameCanvas"></canvas>
+
+        <!-- Start Screen -->
+        <div id="start-screen" class="screen-overlay">
+            <h1>Retro Speed Racer</h1>
+            <p>Dodge the traffic!</p>
+            <p class="text-sm mt-4">Desktop: Use Arrow Keys<br>Mobile: Drag to Move</p>
+            <button id="startButton" class="button mt-4">Start Game</button>
+        </div>
+
+        <!-- Game Over Screen -->
+        <div id="game-over-screen" class="screen-overlay">
+            <h1>Game Over</h1>
+            <p>Final Score: <span id="finalScore">0</span></p>
+            <button id="restartButton" class="button">Restart</button>
+        </div>
+    </div>
+
+    <script>
+        // --- DOM Elements ---
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        const uiContainer = document.getElementById('ui-container');
+        const scoreEl = document.getElementById('score');
+        const speedEl = document.getElementById('speed');
+        const startScreen = document.getElementById('start-screen');
+        const gameOverScreen = document.getElementById('game-over-screen');
+        const startButton = document.getElementById('startButton');
+        const restartButton = document.getElementById('restartButton');
+        const finalScoreEl = document.getElementById('finalScore');
+        const gameContainer = document.getElementById('game-container');
+
+        // --- Game State ---
+        let score, gameSpeed, gameOver, animationFrameId;
+        let enemyCars, roadLines, enemySpawnTimer, enemySpawnInterval;
+
+        // --- Player Car ---
+        const playerCar = {
+            width: 50,
+            height: 80,
+            x: 0, y: 0, speed: 7, dx: 0, color: '#00ffff'
+        };
+
+        // --- Enemy Car Properties ---
+        const enemyCarProps = {
+            width: 50,
+            height: 80,
+            colors: ['#ff00ff', '#ff3366', '#ff9933', '#33ccff']
+        };
+        
+        // --- Road Line Properties ---
+        const roadLineProps = {
+            count: 10, width: 10, height: 40
+        };
+
+        // --- Setup and Initialization ---
+        function setCanvasSize() {
+            canvas.width = gameContainer.clientWidth;
+            canvas.height = gameContainer.clientHeight;
+        }
+
+        function resetGameState() {
+            score = 0;
+            gameSpeed = 2.5;
+            gameOver = false;
+            enemySpawnTimer = 0;
+            enemySpawnInterval = 120; // Lower is faster spawn rate
+            
+            playerCar.dx = 0;
+            playerCar.x = canvas.width / 2 - playerCar.width / 2;
+            playerCar.y = canvas.height - 120;
+
+            enemyCars = [];
+            roadLines = [];
+            
+            // Initialize road lines based on current canvas size
+            for (let i = 0; i < roadLineProps.count; i++) {
+                roadLines.push({
+                    x: canvas.width / 2 - roadLineProps.width / 2,
+                    y: i * (canvas.height / roadLineProps.count),
+                    width: roadLineProps.width,
+                    height: roadLineProps.height
+                });
+            }
+        }
+
+        // --- Game Flow ---
+        function startGame() {
+            resetGameState();
+            startScreen.classList.remove('visible');
+            gameOverScreen.classList.remove('visible');
+            uiContainer.style.visibility = 'visible';
+            gameLoop();
+        }
+
+        function endGame() {
+            gameOver = true;
+            cancelAnimationFrame(animationFrameId);
+            finalScoreEl.textContent = score;
+            uiContainer.style.visibility = 'hidden';
+            gameOverScreen.classList.add('visible');
+        }
+
+        // --- Game Loop ---
+        function gameLoop() {
+            if (gameOver) return;
+
+            // Update game logic
+            update();
+            // Render the frame
+            draw();
+
+            animationFrameId = requestAnimationFrame(gameLoop);
+        }
+
+        // --- Update Functions ---
+        function update() {
+            // Move player
+            playerCar.x += playerCar.dx;
+            if (playerCar.x < 0) playerCar.x = 0;
+            if (playerCar.x + playerCar.width > canvas.width) playerCar.x = canvas.width - playerCar.width;
+
+            // Move road lines for speed effect
+            roadLines.forEach(line => {
+                line.y += gameSpeed * 1.5;
+                if (line.y > canvas.height) line.y = -line.height;
+            });
+
+            // Spawn and move enemy cars
+            enemySpawnTimer++;
+            if (enemySpawnTimer > enemySpawnInterval) {
+                spawnEnemyCar();
+                enemySpawnTimer = 0;
+            }
+            for (let i = enemyCars.length - 1; i >= 0; i--) {
+                enemyCars[i].y += gameSpeed;
+                if (enemyCars[i].y > canvas.height) enemyCars.splice(i, 1);
+            }
+
+            // Check for collisions
+            checkCollisions();
+
+            // Update score and difficulty
+            score++;
+            if (score > 0 && score % 250 === 0) {
+                gameSpeed += 0.25;
+                enemySpawnInterval = Math.max(45, enemySpawnInterval - 5);
+            }
+            
+            // Update UI text
+            scoreEl.textContent = score;
+            speedEl.textContent = Math.floor(gameSpeed * 40);
+        }
+        
+        function spawnEnemyCar() {
+            const x = Math.random() * (canvas.width - enemyCarProps.width);
+            const color = enemyCarProps.colors[Math.floor(Math.random() * enemyCarProps.colors.length)];
+            enemyCars.push({ x, y: -enemyCarProps.height, width: enemyCarProps.width, height: enemyCarProps.height, color });
+        }
+
+        function checkCollisions() {
+            for (const car of enemyCars) {
+                if (
+                    playerCar.x < car.x + car.width &&
+                    playerCar.x + playerCar.width > car.x &&
+                    playerCar.y < car.y + car.height &&
+                    playerCar.y + playerCar.height > car.y
+                ) {
+                    endGame();
+                    return; // Exit after first collision
+                }
+            }
+        }
+
+        // --- Drawing Functions ---
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Draw road lines
+            ctx.fillStyle = '#fff';
+            roadLines.forEach(line => ctx.fillRect(line.x, line.y, line.width, line.height));
+
+            // Draw player car
+            drawCar(playerCar.x, playerCar.y, playerCar.width, playerCar.height, playerCar.color, true);
+
+            // Draw enemy cars
+            enemyCars.forEach(car => drawCar(car.x, car.y, car.width, car.height, car.color, false));
+        }
+
+        // Generic car drawing function
+        function drawCar(x, y, w, h, color, isPlayer) {
+            ctx.fillStyle = color;
+            if (isPlayer) {
+                ctx.beginPath();
+                ctx.moveTo(x + w / 2, y); // Nose
+                ctx.lineTo(x, y + h);     // Bottom-left
+                ctx.lineTo(x + w, y + h); // Bottom-right
+                ctx.closePath();
+                ctx.fill();
+                // Headlights
+                ctx.fillStyle = 'yellow';
+                ctx.fillRect(x + 5, y + 10, 10, 5);
+                ctx.fillRect(x + w - 15, y + 10, 10, 5);
+            } else {
+                ctx.fillRect(x, y, w, h);
+                // Taillights
+                ctx.fillStyle = 'red';
+                ctx.fillRect(x + 5, y + h - 15, 10, 5);
+                ctx.fillRect(x + w - 15, y + h - 15, 10, 5);
+            }
+        }
+
+        // --- Event Listeners ---
+        // Keyboard
+        document.addEventListener('keydown', e => {
+            if (gameOver) return;
+            if (e.key === 'ArrowRight' || e.key.toLowerCase() === 'd') playerCar.dx = playerCar.speed;
+            else if (e.key === 'ArrowLeft' || e.key.toLowerCase() === 'a') playerCar.dx = -playerCar.speed;
+        });
+        document.addEventListener('keyup', e => {
+            if (e.key === 'ArrowRight' || e.key.toLowerCase() === 'd' || e.key === 'ArrowLeft' || e.key.toLowerCase() === 'a') {
+                playerCar.dx = 0;
+            }
+        });
+
+        // Touch
+        let touchStartX = null;
+        let carStartPosX = null;
+        gameContainer.addEventListener('touchstart', e => {
+            if (gameOver) return;
+            e.preventDefault();
+            touchStartX = e.touches[0].clientX;
+            carStartPosX = playerCar.x;
+        }, { passive: false });
+        gameContainer.addEventListener('touchmove', e => {
+            if (gameOver || touchStartX === null) return;
+            e.preventDefault();
+            const deltaX = e.touches[0].clientX - touchStartX;
+            playerCar.x = carStartPosX + deltaX;
+        }, { passive: false });
+        gameContainer.addEventListener('touchend', e => {
+            if (gameOver) return;
+            e.preventDefault();
+            touchStartX = null;
+        }, { passive: false });
+
+        // Buttons
+        startButton.addEventListener('click', startGame);
+        restartButton.addEventListener('click', startGame);
+
+        // Window resize
+        window.addEventListener('resize', () => {
+            setCanvasSize();
+            // If game hasn't started, we don't need to redraw anything.
+            // If it's running, the loop will handle it. If it's over, redraw the final state.
+            if (gameOver) {
+                // This ensures the car is centered on the start/gameover screen after a resize
+                resetGameState(); 
+                gameOver = true; // resetGameState sets this to false, so we set it back
+                draw(); // Redraw the static scene with centered car
+            }
+        });
+
+        // --- Initial Load ---
+        window.onload = () => {
+            setCanvasSize();
+            gameOver = true; // Ensure game is in a non-playing state initially
+            startScreen.classList.add('visible');
+        };
+    </script>
+</body>
+</html>
