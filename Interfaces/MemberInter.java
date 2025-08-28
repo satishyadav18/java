@@ -6,7 +6,7 @@ class Store{
     Member members[] = new Member[10];
     int count = 0;
     Store(){
-        // System.out.println("Store() constructor called");
+        System.out.println("Store() constructor called");
     }
 
     void register(Member m){
