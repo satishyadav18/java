@@ -38,7 +38,7 @@ public class MemberInter {
         Customer cust1 = new Customer("Alice");
         Customer cust2 = new Customer("Bob");
         store.register(cust1);
-        //store.register(cust2);
+        store.register(cust2);
         
         store.inviteSale();
     }
