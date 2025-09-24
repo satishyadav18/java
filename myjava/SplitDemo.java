@@ -3,7 +3,7 @@ public class SplitDemo {
         String version = "1.2.3";
 
         // Wrong: "." means "any character"
-        String[] wrong = version.split(".");
+        String[] wrong = version.split("."); // This is incorrect instead of " . " use "\\."
         System.out.println("Using split(\".\"):");
         for (String part : wrong) {
             System.out.println("[" + part + "]");
