@@ -1,5 +1,6 @@
 package mypack1;
 
+//same class
 public class Demo1 {
 
     int a = 10;
@@ -10,3 +11,4 @@ public class Demo1 {
         System.out.println(a+b+c+d);
     }
 }
+

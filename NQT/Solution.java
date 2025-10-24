@@ -17,8 +17,9 @@ class Solution {
         }
 
         // Copy back to original array
-        for(int i = 0; i < n; i++)
-            Arr[i] = temp[i];
+        // for(int i = 0; i < n; i++)
+        //     Arr[i] = temp[i];
+        System.arraycopy(temp, 0, Arr, 0, n);
     }
 
     public static void main(String[] args) {

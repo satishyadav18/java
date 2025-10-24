@@ -1,7 +1,7 @@
 import mypack1.Demo1;
 
 
-//Test class is outside the package
+//Test class is outside the package and non subclass
 public class Test {
     public static void main(String[] args) {
         Demo1 d = new Demo1();

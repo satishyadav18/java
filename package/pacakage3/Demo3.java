@@ -1,5 +1,6 @@
 package mypack1;
 
+//same package subclass
 public class Demo3 extends Demo1 {
     public void show() {
         //System.out.println(a + b + c + d); // b is private, so it cannot be accessed here

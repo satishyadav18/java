@@ -1,5 +1,6 @@
 package mypack1;
 
+//same package non subclass
 public class Demo2 {
     public static void main(String[] args) {
         Demo1 d = new Demo1();

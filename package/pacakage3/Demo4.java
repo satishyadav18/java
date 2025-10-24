@@ -1,6 +1,7 @@
 package mypack2;
 import mypack1.Demo1;
 
+//different package subclass
 public class Demo4 extends Demo1 {
     public void show() {
       //  System.out.println(a + b + c + d); //a and b will give error 
