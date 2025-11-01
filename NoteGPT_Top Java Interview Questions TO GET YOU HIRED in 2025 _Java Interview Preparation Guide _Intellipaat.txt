@@ -1,0 +1,398 @@
+
+00:00:00
+Welcome to this video on the most common Java interview questions by Intellipad. If you clicked on this video, chances are you’re already going through placement drives and getting asked a lot of Java-related interview questions. That makes sense because if you want to be a software engineer or a full-stack developer, you need to know Java really well. Even if you’re interviewing at big companies, you’ll probably be spending a lot of time preparing for data structures and algorithms too.
+
+
+00:00:29
+Whether it’s Java or C++, there’s a reason behind it: most enterprise apps are built using Java. Now that we understand how important Java is for interviews, let’s see how this video can help you prepare and land a job. When I was getting ready for placements, I focused on Java as my main programming language. Based on my own interview experience and feedback from other Intellipaat learners, I’ve put together a list of the 30 most commonly asked Java interview questions.
+
+
+00:01:00
+This should help you go over important Java topics and get ready for your next interview. So, guys, keep your notes ready, and let’s kick off with the first batch of basic Icebreaker Java interview questions. Moving on to the first question: What is Java, and why isn’t it considered a pure object-oriented programming language? Java is a class-based, object-oriented programming language made to be simple and portable. Its main feature, “write once, run anywhere,” means you can...
+
+
+00:01:27
+You compile Java code once, and it can run on any platform that supports Java without needing to recompile. That’s why Java is popular for enterprise apps—it’s reliable, secure, and easy to use. But Java isn’t a fully object-oriented language. Why? Because not everything in Java is an object. For example, basic things like numbers and letters are handled differently; they aren’t objects but primitives, like int for numbers or char for letters. You can work with them directly.
+
+
+00:01:56
+without wrapping them in objects. Another reason is the use of the static keyword. Static methods or variables can be accessed without creating an object of the class, which goes against the object-oriented principle that everything should be done through objects. While Java provides wrapper classes like Integer and Float to convert primitives into objects, it still lets you operate directly on primitives. That’s why it’s not a fully object-oriented programming language. Moving on to our next question, which is: explain the key.
+
+
+00:02:24
+Let's talk about what’s involved in running a Java program. First, we need to understand how Java gets compiled, then break down the different parts: JVM, JRE, and JDK. When you write a Java program, you start by creating a Java source file, like Example.java. This source file needs to be compiled before it can run, and Java uses a multi-step process for this. 
+
+First up is compilation. The Java compiler, which is part of the JDK, takes your Java source file and converts it into bytecode. This bytecode is saved in a .class file, like Example.class.
+
+
+00:02:56
+In our case, the bytecode is platform-independent, which means it can run on any system once it's compiled. Now, let's look at how it's executed. Once the bytecode is ready, it can be run—and this is where the JVM, or Java Virtual Machine, comes in. The JVM takes the bytecode and
+
+
+00:03:29
+create Java application including the Java compiler that converts Java code to bite code the J or Java runtime envirment is needed to run the compiled bite code which includes the jvm or Java virtual machine the jvm executes the bite code ensuring the program runs consistently across different platform by loading it into memory and linking it with system libraries so moving ahead with a third question which is what are the main features of java Java is a widely used programming language that's
+
+
+00:03:58
+known for being simple secure and able to run on any platform it's easy to learn thanks to the straightforward syntax and it aoid tricky Concepts like pointers Java organizes code through object which makes it easier to work with and maintain one of the Java's best feature is its ability to run anywhere thanks to Java virtual machine jvm once you write your code it can run on any system no matter what the platform is Java also has a strong security with built-in tools to prevent unauthorized
+
+
+00:04:27
+access plus it handles memory and errors very well while Java runs a little slower than languages like C++ it is still very efficient because it compiles to bite code which is close to machine code it also supports multi-threading meaning it can handle multiple task at once making it perfect for things like web and multimedia application Java can interact with other languages like C and C++ and even load code as needed making it a flexible choice for all kind of softwares moving ahead with our next
+
+
+00:04:57
+question which is what is a Java string pool all right let's talk about something very cool in Java the string pool imagine a huge Library where all the string values you create are stored that's what basically the string pool is whenever you create a Java string in your code Java checks if that exact string is already in this pool if it is it will just give you a reference to the one that's already there so you're not wasting memory on duplicates for example let's say you create two variable with
+
+
+00:05:24
+the same string value like ABC Java will not store two separat ABC string in the memory in instead both variable will refer to the same one in the string pool but here's the thing if you create a string using the new keyword like this new string ABC Java will store the string in the Heap instead of the string pool as you can see the string pool helps Java save memory and speed up the string comparision by reusing the same values instead of creating duplicates it's pretty efficient and a neat way to
+
+
+00:05:53
+manage strings in your program moving ahead with our next question which is what are rapid classes and why they are needed in Java all right wait let's talk about the rapid class in Java you might wonder if we already have primitive data type like int float or car then why do we need something called as rapid class the answer is that rapid class provide additional feature that Primitives don't have they allows us to convert primitive type into objects for example it is a primitive type but it's rapid class is
+
+
+00:06:21
+integer by wrapping primitive type in classes we can use methods like value of or Pars in or tool string which gives us more flexibility this become even more useful especially when working with collections like arist which can only store objects not primitive type a key concept here is auto boxing and unboxing autoboxing automatically converts A Primitive value into an object like turning an INT into integer unboxing on the other hand does the opposite converting an object back to its corresponding primitive type so in short
+
+
+00:06:55
+rapid glasses are essential for handling primitive data types as object making them more powerful and flexible then moving ahead with our next question which is you're developing an online bookstore where customer can browse a large catalog of books you need to store and manage different type of books such as list of all available books a set of unique Jer and a mapping of authors to their book How would Javas collection framework help you efficiently handle these data structures and why is it
+
+
+00:07:22
+important for managing and organizing this kind of data so imagine you're running an online bookstore with a tons of data to manage a list of all books a set of unique journal and a map linking to author and books Java's collection framework makes this task very easy first for all the list of book we can use array list think of it like as a dynamic array that can grow as we add more book it's perfect for keeping your catalog organized and easy next for Unique JRE we would use a hash set this
+
+
+00:07:51
+ensure that there are no duplicate Jers automatically handling any accidental repeats it's like a super efficient way to store categories without worrying about duplicates and finally for mapping authors to their book a hashmap is ideal it works like a dictionary each author which is key is link to a list of books the value this makes it super quick to find all the books by specific author and why is it important using collection in java help us manage large amount of data efficiently they provide built-in
+
+
+00:08:20
+method for adding removing and searching with saves time and make our code cleaner and easier to maintain so instead of writing complex code from scratch leverage these powerful tools to focus on building great features for the bookstore moving ahead with the next question which is explain the use of this and super keyword in Java so in Java both this and super keyword are specific keyword that help us deal with the classes and objects let's break it down this is used when we want to refer to the current object or the current
+
+
+00:08:50
+class it's like pointing to the object that is calling the method or Constructor for example the code you're seeing on the screen in the Constructor this. name refer to the the name of variable of the current object and the parameter name is passed to the Constructor and this dot name ensure that the Valu is assigned to the instance variable of the current object and inside the display name function this do name is used to access the name of the current object which in our case is Ellis on the other hand super refers
+
+
+00:09:20
+to the parent or the base class and it is used when you want to access method or variable from the parent class you can use super to call the parent class Constructor or even refer to the parents class data member and Method so it's like saying I need to get something from the class above me for example the code you are seeing on the screen in the dog class super. Mak sound line calls the Mak sound function from the parent anal class before adding the behavior for the dog to make it clearer if you are in the
+
+
+00:09:50
+child class and want to access something from the parent class use super but if you are just referring to the current class or the current object you will use this these keywords help organize your code making it easy to work with both current and parent class elements moving ahead with our last question which is what is the difference between static class method and instance method let's break down the difference between static method and instant method in Java a starting method is like a method that
+
+
+00:10:17
+belongs to class itself you can call it without creating an object of the class for example you can just call class name. method name starting method can only access other static variable and Method and they cannot use this keyword since they don't belong to any object on the other hand an instance method belongs to an object of the class this means you need to create an object first and then call the method on that object instance method can access both static and instance variable and they use this
+
+
+00:10:46
+keyword to refer to current object in short the key difference is starting method belongs to class and they don't need objects to be called while instance method belong to object and require an object to be invoked starting method are good for things that are Rel to class as a whole while instance method are more about operation on on individual objects so we have already seen some of the basic sets of question while moving ahead with some Advanced questions so what are the constructors in Java and
+
+
+00:11:13
+their types let's break this down in simple Manu imagine you're setting up a new F so before you can use it you need to go through initial setup right like setting up your preferred language connecting to Wi-Fi Etc so similarly in Java Constructor is kind of a like that setup process but for objects in your program so it's a special method which is used to initialize objects in Java and when you create an object from a Class A Constructor is automatically called up to set up the object with some
+
+
+00:11:43
+initial values so what are the properties so some of the properties which a Constructor hold is it has the same name as of a class it has no return return type Constructor do not have a return type or it doesn't return the new value and it get automatically called whenever an object is created using this new keyword and in Java we have two types of Constructor so a default Constructor is also known as no AR because it takes no argument and it's like and if you don't explicitly Define
+
+
+00:12:15
+The Constructor in your class it get automatically called up so for example for default Constructor here we have a class bike we have this Constructor bike and it's just returning a simple statement bike is created okay so this is the exam example of default Constructor now let's see a example of a paramet constru with a code here you can see on the screen that we have a car class we have this class car with a parameterized Constructor taking value of string M and inway so and here we have a Constructor class which is Tak in
+
+
+00:12:55
+parameters of type string and end which is being assigned to model in here so whenever you are creating an object with different value say for example car and car one object and when you whenever you're assigning values of M2 Tesla Model and Y2 2022 so the same values being assigned here also so whenever you will run this program you will see after calling this display function then you will see the values as same model is Tesla and ear is 20 b moving here with the next question which is explain the difference between string
+
+
+00:13:40
+buffer and string window so imagine you have a string in Java and you want to modify it multiple times like adding words or changing its content in Java there are two classes that help with this which is string buffer and string B so now talking about string buffer so string buffer is a synchronized that is thread safe it means two threats can't call the method of string buffer simultaneously which means if multiple threads you can think of it like different people working on same project and are working on the same string then
+
+
+00:14:16
+string buffer will make sure that they don't mess up with each other works so in like operating system you all must have went through uh mutex right so mutex uh like locking of a resource whenever one process is acquiring that resource similarly in case of string Brer if one person is accessing one object then no other person can access that same object so so because of this property it is slower because it makes sure that everything is safe and when many threads are involved it's a bit
+
+
+00:14:49
+slower than string Builder on the other hand talking about string Builder it's a non synchronized now talking about the string Builder string Builder is non synchronized that that is not thread safe it means two threads can call the methods of the string B simultaneously which makes it more efficient than string Builder so if multiple threads try to change the same string like if P1 P2 and P they try to change the same string they can change it but that's usually fine like when you're working in a single threaded in
+
+
+00:15:23
+whats okay so here on the screen you can see that this is a Java program which demonstrate the string buffer class so here we are creating our new string buffer by using the string buer we are creating a new string buffer now let's see the string Builder similarly here we are creating a new string Builder by using string Builder s equals to new string Builder and passing on the vales so you understood right so if you're working with just one task at a time and need something quick you should go for string Builder but if you
+
+
+00:16:07
+working in a situation where multiple tasks are changing you should go with the string buer the next question which is what is the difference between abstract classes and interfaces so abstract classes and interfaces in Java both allows us to Define methods and subass must Implement so in Java abstract classes and interfaces allows us to Define method that sub classes must implement but this are of different purposes okay so this is the example of an abstract class here are two classes Circle and rectangle and this shape is
+
+
+00:16:41
+extending so in this abstract class this circle and rectangle extends the properties of shape where in in interface this circle and rectangle implements the properties of the shape let's see more detail so abstract classes can have both abstract and non-abstract methods it supports only single inheritance and it can have various type of variables such as final static and non-static talking about the implementation it provides some implementation details and it can extend other classes and Implement interfaces talking about
+
+
+00:17:16
+the interface it can have only abstract method it supports multiple inheritance and variables are public static finals or by default or by default constant it cannot provide implementation and only method signature and it can only extend other interfaces right let's see this through a code so let's see here you have a public abstract class shade which carries both up STP method this void drop and nonstp Method move but whenever you will talk about this interface drawable it only consist
+
+
+00:17:55
+of abstract meod okay so this is the basic difference in D SK I hope now you clear with so here you can see we have a abstract class shape and we have a abstract knitted void draw and we have a non-abstract knitted void KN and one print statement so you can see in abstract class we have both abstract and non-abstract Method but in indas we have only abstract metics and no abstract meod so this is the basic difference between an abstract and the Ence moving ahead with our next question which is what is Method overloading and
+
+
+00:18:39
+can we overloo the main method okay so method overloading in Java allows a class to have multiple methods with the same name but they should differ in number of parameters and the or the type of parameters or what both okay which is a feature of polymorphism where the save method can perform different tasks based on the input provided it's a way to make your code more flexible and easier to understand and now talking about can we overload the main method yes we can overload the main method but there's a catch the main
+
+
+00:19:23
+method is special because it's a entry point of Java application you all agree right and the jvf allows looks for the male string guard method to start your program even if you overload the main method with different parameter the jvm will only call the original string argument method okay now let's see example through the code as you can see here we have a public class overloading and this is overloaded main method with an in parameter in okay we have overloaded this main method with another parameter dou
+
+
+00:20:25
+R and this is your original main now we are calling the overloaded method from original main by passing the value according to the parameters so here we are giving argument five and here we are giving ALG 3.1 now let's run this code so whenever we are passing here the arguments accordingly the value is being dis Right Moving ahead with our next question we have explain method overriding and it restruction on static and private methods so method overriding occurs when a subass provides a specific
+
+
+00:21:19
+implementation of a method already defined in super class okay and the method in the subclass must have the method signature like name and the parameter should remain the same right so method overriding is a key Concept in Java which enables a runtime polym and what we just talked about like overloading the main method it's the example of compile type polym actual method executed is determined by objects run type not just the reference variable okay so here we have a pent class and a sub class and suppose we
+
+
+00:21:58
+have a two methods here move and eight and suppose this move is being inherited by this do class then this move will have its own implementation and is known as overridden methods okay now let's see this with an example of a code okay so now talking about this we have a class animal which is a base class with some of the method like move and eat we have a class dog which is extending the properties of anal and this dog has its own move and in this it has dog is running so now whenever you will call this function D do
+
+
+00:22:44
+Mo then this class will have its own implementation that means it will be showing that dog is running instead of sh saying that animal is moving why because this class is overd in the properties of the NL CL so that was the basic idea of method overriding now talking about the restriction on starting in private method so overriding methods access modifier in a subclass can be more so we cannot override the static method because method overriding is based on Dynamic banking at run time okay so that's the reason we can't
+
+
+00:23:21
+override the starting method moving here to the next question which is how is exception leing ding Java so order except options suppose here you can see on the image a girl is watching a video on YouTube okay and all of sudden the Wi-Fi gets disconnected then what will happen it will be interrupted in watching video due to internet disconnectivity and there will be a message shown here like uh no internet right similarly exception handling in Java is a mechanism to handle runtime errors ensuring normal Flow by using C catch
+
+
+00:23:58
+block and other related constructs so that suppose you have 109 of cod and one exception comes here so there is a specific block of codes in Java to handle this exception and which will make sure that your normal flow of the program is there okay so how is exception handled in Java suppose there's a program code if the exception has occurred yes then it will go to TR catch block and if the exception is handled the finally block is executed and if it is not then also the finding block is executed if if there is no
+
+
+00:24:40
+exception so what is TR block it contains the code that might through an exception what is cat block it captures and handle specific exception and multiple catch blocks can be used for different type of exception okay for example you all know that 10 by 0 will give you an exception okay so this will go in the tri block okay and the catch block will handle the exception sound it will print can't divide by Z right and then comes the find the block which is always executed whether the exception is there or not so there is
+
+
+00:25:29
+some line like this block is always executed regardless of the exception so together these B ensure that program can handle errors and continue running moving ahead with our next question which is what do you mean by life cycle of thread in Java so life cycle of thread in Java refers to various stages are thread goes to from its creation to its termination it same as of in operating system a process goes through multiple stages for example the new state when you create a thread but having started runnable once you
+
+
+00:26:02
+call the start method okay the thread moves to runnable State and in this it is ready to run but may not be actively running right now talking about the running state so after this runnable state the process finally goes into this running State and in this the process now is now has acquired all the required resources and is ready so now talking about this blocked waiting and sleeping state so in this the process has gone for Io request and is blocked for some amount of time and finally we have terminated State the
+
+
+00:26:40
+thread ends when its task is completed so understanding these State help manage thread effectively in Java ensuring smoother multitasking and synchronization moving in with the next question which is what is a single class and how do we create it so a single class in Java it's a class designed to have only one instance or object throughout the entire program so suppose this client one client two and client three this will have a single instance of this function throughout okay and the main idea is that no matter how many
+
+
+00:27:13
+times you try to create a new object always get the same instance which ensures control access to Resource such as database connection we are having more than one instance could lead problem like wasting memory or causing conflicts so to create a single class in Java we follow the step like prevents direct instant creation and to create single class in Java we follow the steps like private Constructor which is made private to prevent other glasses from creating new instance okay so the Constructor is defined as private not
+
+
+00:27:45
+public starting method usually get instance is used to provide the global access is used to provide the global access point for the single instance which this method checks if the instance already exist if it doesn't it creates a new then we have third static instant then we have thirdly static instance variable in this repeat the instance is stored as a static variable so it's shared across all calls to instance so moving ahead with our next question which is what is difference between aggregation and
+
+
+00:28:19
+composition in jav so in Java when objects are related to each other there are two type of relationship that is aggregation and composition you can think of agregation has a relationship for example imagine a department in college a department has student but those student can exist without Department right the student have their individual identities and if the department is removed the student can still exist or move to other departments or leave the college this means they're not tightly
+
+
+00:28:49
+bound together similarly the talking about the objects it can exist independently in aggregation and the child object can outlife the parent and it is used when objects have their own life cycle whereas talking about the composition so composition is more dependent form of aggregation and it has a part of relationship for example think of libraria its books if the library is destroyed all the books inside it are also destroyed and the book cannot exist without library in composition only one object like Library owns the control
+
+
+00:29:30
+the life cycle of other repeat in composition so we can say in composition one object like Library controls the life cycle of other object like book okay so a book is a part of library and without the library the book can't exist similarly child object depends on the parent object in composition and child object are destroyed with the parent and it is used when objects are strongly bound them so in summary you can say aggregation is more like a relationship where one object contains another but both have that individual
+
+
+00:30:08
+identities on the other hand composition is where one object fully control the existence of other moving ahead with the next question which is what is an anonymous in class imagine you want to create a quick onetime use helper in your Java program like a disposible tool that's where Anonymous inner class comes in so an anonymous inner class is a class without name that is defined and instantiated all at once typically used for implementing interfaces or extending classes in a one siiz so talking about
+
+
+00:30:37
+the properties it doesn't have a name is used to override method or add extra behavior and only one object of that classes created it helps simplify code when you need a quick custom implementation and it saves time and space by avoiding creating a separate class F okay now let's see a simple example for the same now you can see here the code on this so you can see the code here on the screen is a simple example we have interface age then void get age then we have using Anonymous in a class so here
+
+
+00:31:31
+instead of creating a separate class that implements AG we create Anonymous class in the main method this makes the code Compact and easy to manage okay so key pointers single implementation no Constructor you can't Define a Constructor because class has no name and local variable it can access local variable of surrounding method but they must be final or effectively signed so in the given code the age interface this age interface is implemented using a Anonymous class which is created during the instantane of age in the
+
+
+00:32:15
+statement age object is equals to New Age here the New Age part indicates the creation of the anonymous class Anonymous class and the implementation of get method inside this get age inside this provides Its Behavior this Anonymous class does not have a name and is directly override the get age method of the age interface when OBG do get age is called the overridden method on the anonymous class is executed printing ages 21 with the console right so we don't have a name here and as soon as this new object is
+
+
+00:33:03
+being created then I'm presses automatically get cor okay moving ahead with our next question explain the difference between implicit and explicit type conversion so type conversion in Java is like changing the shape of data to fit different containers okay imagine pouring a water from a small glass into a large one it automatically it's automatic and easy but if you pour into a small glasses you might spill some right so you have to be more careful and this analogy helps explain implicit and explicit type
+
+
+00:33:36
+conversion now talking about the implicit type conversion coration it's a automatic conversion of a smaller data type to a larger data type by the compiler so the Java compiler does this when it's safe to go like when you are moving data from a smaller container to bigger one so this int is of course smaller than this double so it automatically get converted into a double here Java C that it can easily fit into double so it does so advantages is it's convenient you don't need to
+
+
+00:34:11
+write extra code and it's automatic mean as the Java compiler see it does it now talking about explicit type conversion this is the process where the programmer manually converts a variable from one data type to another so for example you have a double big num and you want to convert it into int so here you will write the int int num and then you will convert so you will have to manually convert double into end because Java compiler is not going to do it for you so the advantage is control and Clarity okay so when
+
+
+00:34:52
+understanding these two approaches you can write more error free Java programs and handle data conversion 20th question which is what is the purpose of a volatile keyword in Java so the volatile keyword in Java is used to ensure that changes made to a variable in one thread are immediately visible to all the threads preventing threads from caching the variable and ensuring consistent access across multiple threads okay so without this volatile if one threads update the variable suppose one thread is updating this variable X
+
+
+00:35:25
+the other thread might not see the change right away because each thread could keep its own local copy of the variable and using volatile tells the jvm that the variables value will always be read from and written to the main memory not from threads local cache okay which ensure that all threads see the most recent value of the variable so suppose if there is one variable this counter is accessed by thread one and thread two so if any changes is made to this counter it will immediately be reflected to this counter also and that
+
+
+00:35:56
+is what the purpose of volatile keyword is so in summary we can say that we use volatile when we need threads to see the latest value of variable immediately but don't required the atomic operation and what I mean by atomic operation is something like x = x + 1 these are all the atomic operation it's a lightweight alternative to synchronization for visibility purpose so moving ahead with the next question which is what is the difference between system.out system. ER and system. so in Java system.out
+
+
+00:36:28
+system. ER and system.in are the standard streams for handling output and input in console based application okay so here is your console for printing anything these three are used so now talking about the purpose system.out is standard output for regular message system. ER standard output for error message and system. in is the standard input for reading user inputs okay s hello world it's for displaying the message be system. ER so system. error. print Len if any occur has occurred again for system.in it's like the often
+
+
+00:37:04
+combined with classes like scanner scanner class for taking the user input so here's the Syntax for all the three system. out print Ln print Ln error and for taking the user input so these three streams helps in debugging and managing console interaction efficiently moving ahead with the next question which is what are the access specifiers in Java and their purpose this is one of the most commonly asked question in interviews so as we all know there are three main access specifiers in Java
+
+
+00:37:32
+which is public private and protected so what is a public when you define any class to the public that class is accessible from any other class and it is used when method or variable need to be accessed globally okay so if a class is defined with this private keyword it is accessible only within the class where it is defined and where it is used it is used to protect sensitive data and encapsulate implementation details we talking about protected so it is accessible within the same package and by the subclasses so any sub classes
+
+
+00:38:02
+also can inherit or can access the data members and member functions and it balances between public and private allowing limited access okay so Suppose there is a so talking about the implementation of all these three you all know that public is just defined using this public keyword and all the other classes Class A suppose there's a Class B so Class B can access the properties of Class A when it is defined publicly okay okay so now talking about the private so if there is a class A with private void
+
+
+00:38:37
+display okay and Suppose there a message s hello okay and uh if there is under Class B okay here this object is created obj equals to new a and when this object object this object will try to access this display which is privately defined in this class a video system will throw a compile time error okay when trying to access the private number moving ahead with the next question which is do final finally and finalized keyword have the same function so the answer would be no the keyword final finally and finalize
+
+
+00:39:18
+in Java do not serve the same purpose and they are used for different uses so now talking about this final keyword so the keyword final is all about restrictions you can make it to restrict the user from changing the value of a variable from extending a class or for overriding a method so if you have a variable defined with final keyword int X suppose it is 10 so when you will assign this variable X to 20 a error will be thrown that it cannot be reassigned because this is assigned with the final keyword moving ahead with
+
+
+00:39:51
+finally so the finally block is used in exception handling okay and it ensure that certain code always is runs whether or not an exception has occurred for instance it's often used for resource cleanup like closing files or database connection okay so suppose uh we have already discussed there are try and cash blocks for exception handling so Suppose there has occurred some exception in X = to 5 by 0 you all know this is exception case so it will be in Tri block okay so cat will catch the exception
+
+
+00:40:28
+exception e and the finally block will always run regardless this will always execute regardless of the exception has occurred or not suppose instead of 5 by 0 so instead of this 5 by 0 if your statement would have been something like in x = 20 by 5 then also this finally would have been run okay so no matter what this block will always run now talking about this finalize so the finalize method is called by the garbage collector before an object is destroyed okay allowing cleanup task like releasing the resources however it's
+
+
+00:41:10
+rarely used in modern Java due to better alternative like try with resource example okay so this is called when we want to clear the objects memory so in short we can say finally sets restrictions this finally sets restrictions this finally it ensures was clean up after the exceptions and this finalize is for clean up before garbage collector right so moving ahead with our next question which is a string is given our task is to write a Java program to toggle the character of the given string for example for the string this the
+
+
+00:41:52
+string after toggling will look like this so all the Caps will be converted to lower case and all the lower will be converted to uppercase okay so what our pseudo code will be so we'll be reading the input string okay this one we'll be initializing an empty result okay we'll be initializing a variable for creating the result then we'll be having a looping statement to go through each character of this string and we'll check if character is uppercase suppose if this s is in uppercase it will be
+
+
+00:42:26
+converted to lower case and it will be appended to the result the result variable which will make here is if character is in lower case the CH will be converted to upper case and it will be printed to the result and then the output will be printed okay so let's see the Java code for the same so here we are creating the scanner object here we are asking for the user input we are reading the string input from the user storing it into V tool then we are closing the scanner thing creating the string Builder to build the to screen V
+
+
+00:43:01
+three then we are converting the input string into arrrow of character then here we are getting the length because we have to put the looping statement okay so we are putting the looping through each character of the input string and here the F else uh condition for checking if it is in upper case it will be converted to lower case and if the character is in lower case it will be converted to upper case and the and up it the result okay so there are three is your result and here the last console we are
+
+
+00:43:40
+printing let's run this code so let's run this code to see the result so yeah so suppose we writing the string s d r i n g so you're seeing so you're seeing this capital S is being converted to small s and rest like that only so this was all for this particular question so moving ahead with the next question which is calculate how many times a digit D occurs in the number n one has to ask the user to give the values of N and D okay okay so suppose this is a number 1 2 3 4 4 6 5 so our
+
+
+00:44:31
+task is to find suppose four how many times this four has occurred in this particular number this is our task okay so what is the Pudo we'll be reading the number n and D okay initializing Set uh we'll be making one count variable here count and we'll setting it to zero then our looping statement will be there while n is greater than Zer okay and then we'll extract the digit by using this modulus and we'll check if the extracted digit is equals to B we'll increment the count and we'll reduce update to n to n
+
+
+00:45:09
+by uh 10 then we'll update this n by dividing n by 10 uh each time we'll do this we'll remove the last digit and then we'll print or return the count okay so uh let's see the code for the same so here the simple code for the same we are making a function to count the occurrence of Digit D number n this is the name of your function count digit occurrences parameters n and D here will'll be taking the n&d from user this is the looping statement every time this is checking if n 10 equal
+
+
+00:45:46
+equals to D every time we are incrementing the count and here we are returning the count okay so let's see by running this code so suppose 1 2 3 4 4 5 okay so here showing that digit four occurs three times in this particular number right so you must practice this code because it's it is asked in many interviews moving ahead with the next question which is print reverse array in Java using recursion for the given input array without using any extra space okay of one ignore the implicit stack
+
+
+00:46:29
+function overhead we have to ignore using recursion for computing the space complexity okay right so we have to reverse the array suppose we have an array 1 10 12 13 then after reversal we'll be having 13 12 10 and 1 right so we will making the reverse array this a SLE code then that function will take argument as array start and end base case will be if the start is greater than or equal to end return okay so there is no element or only one element is present in this array we have to return then we have to
+
+
+00:47:11
+swap array of start with array of n this one to this one and then again we'll call this reverse array by call by passing array start + one meaning initial start is here it will be pass to here and if the initi if the end is here it will be coming to here okay and in main function we'll Define an array of ARR we'll call reverse array by passing initially array zero array do length minus one function okay and then we'll print the array simple let's see the code for the same okay so this is the code for your
+
+
+00:47:54
+reverse array this is a recursive function we are passing array start in this is your base case if the start becomes greater than or equal to end will return then we are swapping here the elements okay then again this recursive call is being called okay nice and here we are printing the reverse are so let's run the score to see if the score is working or not okay Enter the size of par say four enter the number of elements one enter array elements we can 1 14 4 6 so RSE array will be 6 43 y Yeah the
+
+
+00:48:53
+code is right you may check it by running it into your vs code or by practicing it on to L code so moving ahead with the next question which is write a program to check if the strings are anagram okay so anagram and strings are something that have same characters with same frequency but the order of character is different for example if you have two strings S1 which carries act and S2 which consist of T so the frequency qu of a is 1 C is 1 and K is 1 and in S2 the frequency of K is 1 a is one and C is 1 so you can see
+
+
+00:49:39
+the order is different but the frequency of occurrence is same so that's called the anagram string so what will be our approach towards this question we'll take an input we'll uh take two words we'll check the lens if the word have different length they can't be anagrams okay fine so it's pretty simp simple that if there is a difference in length string will not be in anagrams so we'll stop there and we'll say they are not ANS then we'll convert to character then
+
+
+00:50:07
+we'll break both word into individual letters okay then we'll sort we'll arrange the letter in alphabetical orders okay then we'll convert to character if the sorted version of both word match exactly they are anagrams otherwise not and then will display the result you can also do this using this map U but will not use map for this particular question in our program so let's see the implementation okay so you see so we are taking the input we are asking for the first and second string
+
+
+00:50:55
+okay and we have made is anagram function which will check if this we have made this is anagram function which will check if the strings are anagram or not so it's simply checking if string 1. length is not equal to string 2 do length it will return false otherwise it will convert it into characters and then it will sort it and then it will return array if it is equal both the arrays are equal then it will return through okay so here checking if it is anagram it is R turning the string anr otherwise the
+
+
+00:51:37
+Stringer not let's run this code so enter for string T Str are moving ahead to our next question which is write a Java program for finding the index of the first as well as the last occurence of an Li in array using linear time without using the extra space consider one andex okay so suppose you have some elements 1 1 2 3 1 4 5 okay and if I want to find the first and last occurrence of this one so the first occurrence is at zero at position and the last occurrence of this particular one is at 0 1 2 3 fourth
+
+
+00:52:23
+position right so what will be our approach will defend Nar and target number okay we'll set first and last index to minus one okay so suppose we don't know where does it exist so we'll set it to minus one then we'll Loop through the array if the number matches we'll set for uh we set first index if not set and we'll update last index each time and then we'll print the result if the first index is minus one fine it is never found so if this doesn't get in ined any time during your program the uh
+
+
+00:53:00
+the target is not there otherwise we'll print the first and last position let's see the code for the same so the program scans in Array we have already defined the array here okay to find the first and last position of the given number it's start by initializing two variable gu two and gu three by minus one indicating that the number has a found yet then it iterates through the aray checking each element okay here it is iterating and when it encounters the target number for the first
+
+
+00:53:39
+time it will set this V two to V 4 + 1 okay regardless of whether it is the first occurrence or not it cons it continuously update last index to store the most recent position okay and after finishing the loop checks if the first index is still minus one so after finishing the loop it will still check if the first index is still minus one it will throw a print statement that element is not form in the array otherwise it will display the first and last occurence of that particular okay so let's run this code
+
+
+00:54:17
+to see the output with so you see that the first occurence of three because our Target was three this one is at index two and the last occurence of three is at index s okay so that's all for this question with the next question which is apart from security aspects what are the reason behind making strings immutable in Java so string in Java are made immutable for several practical reasons Beyond security and this design Choice significantly improved the efficiency so for efficiency and and reliability of
+
+
+00:54:58
+the language so talking about the string pool so first is string pool optimization so strings are used extensively in Java and creating new object for every string would waste memory right so to optimize this Java uses something called as string pool so a specific area in memory where string literals are stored when you create a string Java checks the pools to see if the string is already there if it does the reference is used just the reference would be used for that string for creating a new object and this sharing
+
+
+00:55:29
+is only possible because strings are immutable okay because of this immutable Factor modifying one string would accidentally alter others so this sharing is only possible because strings are immutable and if the strings were mutable the modifying one string would accidentally alter others breaking the program right second is multi- threading or thread safety so strings are commonly shared across multiple threads and application since immutable objects cannot change State they are inherently thread safe meaning you don't need
+
+
+00:56:02
+additional synchronization to protect them and this simplify multier programming and makes your code cleaner and less errorful now talking about this last one collection so reliable hash based collections so strings are widely used as key in collection like hashm so you must have heard about this hashmap so key value pair exist in this hashmap so if the strings were mutable their hash codes could change after being inserted into the map okay leading to data corruption or retrieval failure immutability ensures that consistent
+
+
+00:56:37
+behavior and reliability is there so by making strings immutable Java achieves optimization thread safety and reliable data management okay moving ahead with our last question which is what is the difference between deep copy and shallow copy okay so deep copy creates a new object and copies all the field ensuring that changes made to one object Suppose there is object X and if any changes is made in this object don't affect the other object so in a very simple language Suppose there are two friends okay they two have their
+
+
+00:57:31
+separate piggy bands so if this friend adds two coins to his piggy bank this particular friend's piggy bank doesn't get altered by his savings or his coins right so this is something called Deep copy so each time new memory is allocated whenever the object has so what's about the memory impact new memory is allocated each object has its own independent reference okay let's see it with a very simple code so Suppose there is one class okay a and we have a variable in X assign 30 okay and there
+
+
+00:58:08
+is another class B I'm not writing the uh return type and here what we are doing we are creating the object of this class A A obj 1 equals to new a okay so what it will do it will just copy the reference not the value okay and we are creating another object obj2 equals to new okay and now what we are doing if we are obj do2 if we are modifying this x value to six right and we are printing the value of obj 1.x so sou obj 1.x okay and if you're printing this value we will say we will see that the
+
+
+00:59:09
+value of x this program will return will be 30 because it is just copying the reference and not the original value okay so this was all for the Deep copy so moving ahead with what is the shallow copy so shallow copy refers to the copying the reference of an object not the actual object and changes made to one reference will affect the other for example these two are sharing the same cupboard and one if one modification is made from his end it will also reflect when he will open the same cupboard okay
+
+
+00:59:44
+talking about the memory impact no new memory is allocated both reference point to the same memory allocation okay so the only difference is that here we are creating the object object 1 equals to new a and when this object 2 will be created a obj2 it will be assigned to obj1 like this and when this object two will update the value of x to 6 and when this will be printed object do 1X the value will be 6 okay so because both the reference are pointing to same memory allocation understood so that's all from
+
+
+01:00:33
+my side if you guys like this video kindly hit the like And subscribe button for intal carts YouTube channel thank you and see you in the next video [Music]
+
