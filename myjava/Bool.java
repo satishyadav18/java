@@ -1,6 +1,6 @@
 
 public class Bool {
-    public static void main(Str[] args){
+    public static void main(String[] args){
         char x = '7';
         char y = '4';
 
