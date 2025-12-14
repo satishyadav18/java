@@ -1,4 +1,4 @@
-abstract class Super{
+abstract class Super{  // cannot create object of abstract class
     public Super(){
         System.out.println("Super class constructor");
     }
@@ -7,11 +7,11 @@ abstract class Super{
         System.out.println("Display1 method in Super class");
     }
 
-    abstract public void display2();
+    abstract public void display2();  //undefined method and such class is only used for inheritance
 }
 
-class Sub extends Super{
-    @Override
+class Sub extends Super{  
+    @Override    // must override abstract class method to make it concrete
     public void display2(){
         System.out.println("Display2 method in Sub class");
     }
