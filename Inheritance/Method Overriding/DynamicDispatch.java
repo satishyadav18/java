@@ -21,7 +21,7 @@ class Sub extends Super {
 public class DynamicDispatch {
     public static void main(String[] args) {
         Super superObj = new Super();
-        Super subObj = new Sub();
+        Super subObj = new Sub();  // Super class reference to Sub class object  i.e. dynamic dispatch
 
         // Sub sub = new Sub();
         // sub.display1(); // Calls Sub's display1
