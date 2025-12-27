@@ -16,7 +16,7 @@ public class Mask{
 
         int result = n ^ ma;
         System.out.println("Result after XOR with mask: " + result);
-        sc.close();
+        //sc.close();
 
     }
 }
