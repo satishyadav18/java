@@ -23,7 +23,7 @@ class nQT{
         System.out.println("Inserted elements are: ");
         for(int i = 0; i < n; i++){
             for(int j = 0; j < m; j++){
-                System.out.printf(arr[i][j] + " " + ((Object)arr[i][j]).getClass().getSimpleName());
+                System.out.printf(arr[i][j] + " ");
             }
         System.out.println();
         }
