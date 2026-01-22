@@ -1,6 +1,6 @@
 
-class j1 {
-    public static void main(Str[] args){
+class ArithOp {
+    public static void main(String[] args){
         System.out.println(3+5);
         System.out.println(3*5);
         System.out.println(3-5);

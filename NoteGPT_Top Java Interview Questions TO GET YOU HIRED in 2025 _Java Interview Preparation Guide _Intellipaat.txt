@@ -50,7 +50,7 @@ the same string value like ABC Java will not store two separat ABC string in the
 
 
 00:05:53
-manage strings in your program moving ahead with our next question which is what are rapid classes and why they are needed in Java all right wait let's talk about the rapid class in Java you might wonder if we already have primitive data type like int float or car then why do we need something called as rapid class the answer is that rapid class provide additional feature that Primitives don't have they allows us to convert primitive type into objects for example it is a primitive type but it's rapid class is
+manage strings in your program moving ahead with our next question which is what are wrapper classes and why they are needed in Java all right wait let's talk about the wrapper class in Java you might wonder if we already have primitive data type like int float or car then why do we need something called as rapid class the answer is that rapid class provide additional feature that Primitives don't have they allows us to convert primitive type into objects for example int is a primitive type but it's wrapper class is
 
 
 00:06:21
