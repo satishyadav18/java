@@ -5,6 +5,8 @@ public class Str {
 
         String n = "Satish";
         n = n + " Yadav";
+        String sub = n.substring(0,1);
+        System.out.println(sub);
         System.out.println("Hii " + n);
         
     }    
