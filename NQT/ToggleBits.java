@@ -4,7 +4,7 @@ class ToggleBits {
 
         while (n > 0) {
             int bit = n % 2;          // get last bit
-            res = (bit == 0 ? "1" : "0") + res;  // toggle and prepend
+            res = (bit == 0 ? "0" : "1") + res;  // toggle and prepend
             n = n / 2;
         }
         return res;
