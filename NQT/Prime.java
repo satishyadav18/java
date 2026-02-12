@@ -33,14 +33,15 @@
 // }
 
 
-import java.util.Scanner;
+// import java.util.Scanner;
+import java.io.*;
 
 
 public class Prime{
 
     static boolean isPrime(int n){
-        // if(n <= 1)
-        //     return false;
+        if(n <= 1)
+            return false;
         if(n==2 || n==3)
             return true;
         if(n % 2 == 0 || n % 3 == 0)
@@ -55,10 +56,13 @@ public class Prime{
 
     }
 
-    public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) throws Exception{
+        // Scanner sc = new Scanner(System.in);
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        
         System.out.println("Enter the range: ");
-        int n = sc.nextInt();
+        // int n = sc.nextInt();
+        int n = Integer.parseInt(br.readLine());
 
         if(n < 2)
             System.out.println("No prime num within this range.");
