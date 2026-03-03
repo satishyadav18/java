@@ -14,3 +14,6 @@ class ToggleBits {
         System.out.println(toggleBits(10)); // 0101
     }
 }
+
+
+
